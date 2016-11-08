@@ -1,0 +1,27 @@
+{
+  "name": "jsbuilder",
+  "version": "1.0.0",
+  "description": "Sample project for demonstrating the Builder Design Pattern using JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gergob/jsBuilder.git"
+  },
+  "keywords": [
+    "javascript",
+    "design",
+    "patterns",
+    "builder",
+    "pattern",
+    "node.js"
+  ],
+  "author": "Gergo Bogdan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gergob/jsBuilder/issues"
+  },
+  "homepage": "https://github.com/gergob/jsBuilder#readme"
+}
