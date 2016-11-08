@@ -1,33 +1,31 @@
-var LayerFactory = require('./LayerFactory');
-var CreamFactory = require('./CreamFactory');
-var ToppingFactory = require('./ToppingFactory');
-
+var ChocolateCakeBuilder = require('./ChocolateCakeBuilder');
+var StrawberryCakeBuilder = require('./StrawberryCakeBuilder');
+var TraditionalCakeBuilder = require('./TraditionalCakeBuilder');
 
 function PastryCook() {
-    var layerFactory = LayerFactory.getInstance();
-    var creamFactory = CreamFactory.getInstance();
-    var toppingFactory = ToppingFactory.getInstance();
-
+    var chocolateCakeBuilder = ChocolateCakeBuilder.getBuilder();
+    var strawberryCakeBuilder = StrawberryCakeBuilder.getBuilder();
+    var traditionalCakeBuilder = TraditionalCakeBuilder.getBuilder();
 
     return {
-        buildChocolateCake: function() {
-            return {
-                layer: layerFactory.getStandard(),
-                cream: creamFactory.getChocolate(),
-                topping: toppingFactory.getChocolate(),
-            };
-        },
+        buildCake: function(flavor) {
+            var cake = null;
+            switch (flavor) {
+                case 'chocolate':
+                    cake = chocolateCakeBuilder.buildCake();
+                    break;
+                case 'strawberry':
+                    cake = strawberryCakeBuilder.buildCake();
+                    break;
+                default:
+                    cake = traditionalCakeBuilder.buildCake();
+                    break;
+            }
 
-        buildStrawberryCake: function() {
-            return {
-                layer: layerFactory.getLowCarb(),
-                cream: creamFactory.getWhipped(),
-                topping: toppingFactory.getStrawberry(),
-            };
+            return cake;
         }
     };
 }
-
 
 module.exports = {
     getBuilder: PastryCook
