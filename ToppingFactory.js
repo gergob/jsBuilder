@@ -4,7 +4,7 @@ function ToppingFactory() {
             return 'Topping: [Chocolate]';
         },
 
-        getVanilia: function() {
+        getVanilla: function() {
             return 'Topping: [Vanilia]';
         },
 
